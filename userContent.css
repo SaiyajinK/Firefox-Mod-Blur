@@ -2308,3 +2308,148 @@ url("about:newtab") {
     display: none !important;
   }
 }
+
+/* ==========================================================================
+   FIREFOX NOVA
+   Windows accent color for all internal about: pages
+   Paste this block at the very end of userContent.css
+   ========================================================================== */
+
+@-moz-document url-prefix("about:") {
+  @media -moz-pref("browser.nova.enabled") {
+    :root,
+    * {
+      /* Windows accent color */
+      --nova-windows-accent: AccentColor;
+      --nova-windows-accent-text: AccentColorText;
+
+      --nova-windows-accent-hover:
+        color-mix(in srgb, black 10%, var(--nova-windows-accent));
+
+      --nova-windows-accent-active:
+        color-mix(in srgb, black 20%, var(--nova-windows-accent));
+
+      --nova-windows-accent-soft-hover:
+        color-mix(in srgb, var(--nova-windows-accent) 32%, transparent);
+
+      --nova-windows-accent-soft-active:
+        color-mix(in srgb, var(--nova-windows-accent) 50%, transparent);
+
+      /* ================================================================
+         NOVA PRIMARY ACCENT
+         ================================================================ */
+
+      --color-accent-primary:
+        var(--nova-windows-accent) !important;
+
+      --color-accent-primary-hover:
+        var(--nova-windows-accent-hover) !important;
+
+      --color-accent-primary-active:
+        var(--nova-windows-accent-active) !important;
+
+      --color-accent-primary-selected:
+        var(--nova-windows-accent-active) !important;
+
+      /* ================================================================
+         BUTTONS / SETTINGS NAVIGATION
+         ================================================================ */
+
+      --button-background-color-primary:
+        var(--nova-windows-accent) !important;
+
+      --button-background-color-primary-hover:
+        var(--nova-windows-accent-hover) !important;
+
+      --button-background-color-primary-active:
+        var(--nova-windows-accent-active) !important;
+
+      --button-background-color-primary-selected:
+        var(--nova-windows-accent-active) !important;
+
+      --button-background-color-primary-disabled:
+        color-mix(
+          in srgb,
+          var(--nova-windows-accent) 45%,
+          transparent
+        ) !important;
+
+      --button-background-color-hover:
+        var(--nova-windows-accent-soft-hover) !important;
+
+      --button-background-color-active:
+        var(--nova-windows-accent-soft-active) !important;
+
+      --button-background-color-selected:
+        var(--nova-windows-accent-soft-active) !important;
+
+      --button-background-color-ghost-hover:
+        var(--nova-windows-accent-soft-hover) !important;
+
+      --button-background-color-ghost-active:
+        var(--nova-windows-accent-soft-active) !important;
+
+      --button-background-color-ghost-selected:
+        var(--nova-windows-accent-soft-active) !important;
+
+      --button-background-color-menu-hover:
+        var(--nova-windows-accent-soft-hover) !important;
+
+      --button-background-color-menu-active:
+        var(--nova-windows-accent-soft-active) !important;
+
+      --button-background-color-menu-selected:
+        var(--nova-windows-accent-soft-active) !important;
+
+      --button-border-color:
+        var(--nova-windows-accent) !important;
+
+      --button-text-color-primary:
+        var(--nova-windows-accent-text) !important;
+
+      /* ================================================================
+         LINKS
+         ================================================================ */
+
+      --link-color:
+        var(--nova-windows-accent) !important;
+
+      --link-color-hover:
+        var(--nova-windows-accent-hover) !important;
+
+      --link-color-active:
+        var(--nova-windows-accent-active) !important;
+
+      /* ================================================================
+         ICONS / INFORMATION
+         ================================================================ */
+
+      --icon-color-accent-primary-desaturated:
+        var(--nova-windows-accent) !important;
+
+      --icon-color-information:
+        var(--nova-windows-accent) !important;
+
+      --background-color-information:
+        color-mix(
+          in srgb,
+          var(--nova-windows-accent) 20%,
+          transparent
+        ) !important;
+
+      --info-bar-border-color:
+        color-mix(
+          in srgb,
+          var(--nova-windows-accent) 40%,
+          transparent
+        ) !important;
+
+      /* ================================================================
+         NATIVE CONTROLS
+         ================================================================ */
+
+      accent-color:
+        var(--nova-windows-accent) !important;
+    }
+  }
+}

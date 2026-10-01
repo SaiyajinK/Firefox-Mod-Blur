@@ -3640,12 +3640,6 @@ toolbar .toolbarbutton-1:not([disabled="true"]):is([open], [checked], :hover:act
   }
 }
 
-/* Neutral bookmark folder icons */
-#PersonalToolbar .bookmark-item[container],
-#PersonalToolbar .bookmark-item[hostContainer] {
-    fill: currentColor !important;
-}
-
 /* Neutral bookmark folder icons everywhere */
 .bookmark-item[container],
 .bookmark-item[hostContainer] {
